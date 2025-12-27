@@ -1,0 +1,129 @@
+/* ===== 全局基础 ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ===== 登录卡片（默认：桌面端） ===== */
+.container {
+  width: 90%;
+  max-width: 360px;
+
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 16px;
+
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== 标题 ===== */
+h2 {
+  margin: 0 0 24px;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* ===== 输入框 ===== */
+input {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 14px;
+
+  border-radius: 10px;
+  border: 1px solid #dcdcdc;
+  font-size: 15px;
+
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+}
+
+/* ===== 主按钮 ===== */
+button {
+  width: 100%;
+  padding: 14px;
+
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 10px;
+
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+
+  transition: background 0.2s, transform 0.1s;
+}
+
+button:hover {
+  background: #5a6ee0;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* ===== 底部文字 ===== */
+p {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 14px;
+}
+
+a {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ================================================= */
+/* ================= 手机端适配 ==================== */
+/* ================================================= */
+
+@media (max-width: 480px) {
+  body {
+    align-items: flex-start;
+
+    /* 规避 iOS Safari 100vh 问题 */
+    min-height: 100svh;
+
+    padding-top: 100px;
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+
+  .container {
+    width: 94%;
+    max-width: none;
+
+    padding: 28px;
+    border-radius: 18px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  input,
+  button {
+    font-size: 16px; /* 防止 iOS 自动缩放 */
+  }
+}
